@@ -10,8 +10,15 @@ class EmailParser
     @emails = emails
   end
 
+# My solution
+  # def parse
+  #   @emails.split(/\.\s+|\s+|\,/).delete_if {|s| s == ""}.map { |string| string.strip}.uniq
+  # end
+
   def parse
-    @emails.split(/\.\s+|\s+|\,/).delete_if {|s| s == ""}.map { |string| string.strip}.uniq
+    emails.split.map do |email|
+      email.split(',')
+    end.flatten.uniq
   end
 
 end
