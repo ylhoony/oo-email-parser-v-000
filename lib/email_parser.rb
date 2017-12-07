@@ -15,6 +15,7 @@ class EmailParser
   #   @emails.split(/\.\s+|\s+|\,/).delete_if {|s| s == ""}.map { |string| string.strip}.uniq
   # end
 
+# sample
   def parse
     emails.split.map do |email|
       email.split(',')
